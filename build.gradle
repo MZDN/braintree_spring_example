@@ -25,16 +25,23 @@ sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web:1.5.7.RELEASE")
-    compile("com.braintreepayments.gateway:braintree-java:2.79.0")
-    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-    testCompile("junit:junit")
-    testCompile("io.rest-assured:spring-mock-mvc:3.0.3")
-    testCompile("org.springframework.boot:spring-boot-starter-test:1.5.7.RELEASE")
+    implementation "org.springframework.boot:spring-boot-starter-web:1.5.7.RELEASE"
+    implementation "com.braintreepayments.gateway:braintree-java:2.79.0"
+    implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
+    testImplementation "junit:junit"
+    testImplementation "io.rest-assured:spring-mock-mvc:3.0.3"
+    testImplementation "org.springframework.boot:spring-boot-starter-test:1.5.7.RELEASE"
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.3'
+// Configuring the wrapper, the old way (gradle < 4.8 )
+// see https://docs.gradle.org/4.4/userguide/gradle_wrapper.html#sec:wrapper_generation
+
+
+// Configuring the wrapper, the new way (since Gradle 4.8) 
+// see https://docs.gradle.org/current/userguide/gradle_wrapper.html#customizing_wrapper
+wrapper{
+    gradleVersion = '5.1'
+    distributionType = Wrapper.DistributionType.BIN
 }
 
 task stage (

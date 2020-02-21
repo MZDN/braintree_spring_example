@@ -1,4 +1,4 @@
-package springexample;
+package service;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -12,6 +12,8 @@ import java.io.IOException;
 
 import com.braintreegateway.BraintreeGateway;
 import com.braintreegateway.Environment;
+
+import springexample.BraintreeGatewayFactory;
 
 import org.junit.Assert;
 import org.junit.AfterClass;
